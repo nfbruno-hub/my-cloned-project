@@ -79,3 +79,21 @@ Once you confirm, I'll analyze the code against these 8 categories and organize 
 4. The architectural pattern you're moving toward, and what blocks you
 
 Would you like me to proceed with this framework?
+
+## **AI Analaysis Notes**
+The important takeaway is that this phase is only about identifying design problems, not fixing them yet. Focus on where responsibilities are unclear, state is global or hidden, and functions cross boundaries between the database layer and service/business logic layer.
+
+
+
+## **AI Refracor Plan** 
+I want you to
+-----
+Write a backend refactor plan for my student enrollment manager code. The plan should help move the current procedural backend toward an object-oriented, layered design. Keep the database layer focused on SQLite row queries, inserts, updates, table creation, and database connections. Keep business meaning in the service layer, including enrollment-key validation, enrollment rules, dashboard meaning, summary counting, and student actions. Also include an implementation prompt I can use after I approve the plan.
+
+Context from my analysis
+-----
+The AI analysis matched my thinking that the main issue is separating database responsibilities from service/business logic responsibilities. It changed my thinking by showing that global state and scattered validation are also important design issues, not just SQL placement. I still need clarification on which specific functions should stay as database functions and which should move into a service layer later.
+
+What you should not do
+-----
+Do not start editing the code yet. Do not write the full refactored code. Do not jump straight into implementation details. Do not suggest changes that mix SQL/database logic with service/business logic. Do not ignore the current function responsibilities or the need to separate database work from dashboard meaning, validation, and student actions.
