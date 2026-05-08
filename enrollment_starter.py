@@ -321,6 +321,22 @@ class EnrollmentService:
     def __init__(self, database: Database):
         self.database = database
 
+    def get_student_enrollments(self, user_id: str) -> list[dict[str, Any]]:
+        """Return active enrollment records for one student."""
+        return self.database.get_student_enrollments(user_id)
+
+    def get_student_enrollment_history(self, user_id: str) -> list[dict[str, Any]]:
+        """Return all enrollment records for one student."""
+        return self.database.get_student_enrollment_history(user_id)
+
+    def get_student_course_record(
+        self,
+        user_id: str,
+        course_id: str,
+    ) -> Optional[dict[str, Any]]:
+        """Return one student's enrollment record for one course."""
+        return self.database.get_student_course_record(user_id, course_id)
+
     def enroll_with_key(
         self,
         user_id: str,
